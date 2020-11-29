@@ -7,3 +7,4 @@
   - ###### Tkinter
   - ###### MySQL
   - ###### mysql.connector
+- ###### [Some basic programs regarding different widget.](https://github.com/TR0UBLESH00TER/Tkinter/tree/main/Codemy)
