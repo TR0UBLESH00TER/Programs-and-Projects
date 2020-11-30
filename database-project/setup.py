@@ -14,6 +14,7 @@ login = Tk()
 login.title(" Login")
 login.iconbitmap(".\\ico\\Data.ico")
 login.geometry("600x400")
+login.resizable(0,0)
 
 frame = LabelFrame(login,text="Setup",padx=20,pady=100)
 frame.pack(padx=20,pady=20)
@@ -39,10 +40,13 @@ def createdb():
 			    DOB DATE, \
 			    DOA DATE) ')
     cursor.close()
+    messagebox.showinfo("Success","Table named \"student\" was created.")
     login.destroy()
 
 def password():
     global pwd
+    global frame
+    global login
     pwd = e.get()
     e.delete(0, END)
     try:
@@ -53,8 +57,12 @@ def password():
             c=db.cursor()
             c.execute("CREATE DATABASE school_data;")
             messagebox.showinfo("Success","Successfully logged in and the database named \"school_data\" was created.")
-            Button(frame,text="Create Tables",padx=5,pady=20,command=createdb).grid(row=1,column=3)
-    except Exception:
+            frame.destroy()
+            login.title(" Setup")
+            frame = LabelFrame(login,text="Setup",padx=20,pady=100)
+            frame.pack(padx=20,pady=20)
+            Button(frame,text="Create Tables",padx=40,pady=20,command=createdb).grid(row=0,column=0,padx=40,pady=40)
+    except EOFError:
         messagebox.showerror("Invalid Password","The password entered is INVALID.")
 
 Button(frame,text="Submit",padx=5,command=password).grid(row=0,column=3)
