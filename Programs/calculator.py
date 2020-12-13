@@ -30,10 +30,16 @@ def button_clr():
 
 def button_equal():
     global e
-    Input = e.get()
+    Input = list(e.get())
+    Solve = ""
+    for i in range(len(Input)):
+        if Input[i] == "×":
+            Solve+="*"
+        else:
+            Solve+=Input[i]
     e.delete(0,END)
     try:
-        e.insert(END,eval(Input))
+        e.insert(END,eval(Solve))
     except Exception:
         e.insert(END,"ERROR")
 
@@ -59,7 +65,7 @@ def button_div():
     global e
     if e.get() == "ERROR":
         e.delete(0,END)
-    e.insert(END,"×")
+    e.insert(END,"/")
 
 
 # Buttons
