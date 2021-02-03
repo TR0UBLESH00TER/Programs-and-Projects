@@ -1,11 +1,3 @@
-"""
-Requirements:
-Python
-MySQL
-Tkinter
-mysql.connector
-"""
-
 from tkinter import *
 from tkinter import messagebox
 import mysql.connector
@@ -17,9 +9,9 @@ try:
         quit()    # Closes the wndow
 except Exception:
     # The code will continue
-    f = ""
+    pass
 
-#Creating the window
+# Creating the window
 login = Tk()
 login.title(" Login")
 login.iconbitmap(".\\data\\Data.ico")
@@ -82,7 +74,7 @@ e = Entry(frame,width=50)
 e.grid(row=0,column=1)
 e.config(show="•")
 
-pwd = ""                     #This variable will be used to store password
+pwd = ""                     # This variable will be used to store password
 
 Button(frame,text="Submit",padx=5,command=password).grid(row=0,column=3)
 

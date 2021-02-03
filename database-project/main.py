@@ -88,7 +88,7 @@ def save():
         DOB=str(dob.get())
         DOA=str(doa.get())
 
-        # Adding enterd records to MySQL Database
+        # Adding entered records to MySQL Database
         query=f'INSERT INTO student(Name, Class, Section, Phone_No, DOB, DOA) VALUES(\'{NAME}\', {CLASS}, \'{SECT}\', {PHONE}, \'{DOB}\',\'{DOA}\')'
         cursor.execute(query)
         db.commit()
@@ -168,7 +168,7 @@ def display():
     tree.heading("DOB",          text="DOB")
     tree.heading("DOA",          text="DOA")
 
-    #Adding Data
+    # Adding Data
     for student in data: 
         tree.insert(parent="",index='end',values=(student[0],student[1],student[2],student[3],student[4],student[5],student[6]))
         
@@ -228,7 +228,7 @@ def Search():
         display()
         messagebox.showerror('Error','Please enter valid Admission number')
     
-#Function to generate csv file of the records present in the student table
+# Function to generate csv file of the records present in the student table
 def export_csv():
     global col,data
     with open('Student_Data.csv', 'a',newline="") as f:
@@ -260,8 +260,8 @@ def Edit():
 
     try:
         # Fetching the existing record from the table "student" 
-        edit = edit.get()
-        cursor.execute(f'SELECT * FROM student WHERE Admission_No = {edit}')
+        edit_id = edit.get()
+        cursor.execute(f'SELECT * FROM student WHERE Admission_No = {edit_id}')
         data = cursor.fetchone()
         if data == None:
             raise Exception
@@ -281,7 +281,7 @@ def Edit():
         Label(frame, text='D.O.B(YYYY-MM-DD)', font=('Courier', 10)).grid(row=6, column=0, pady=5)
         Label(frame, text='D.O.A(YYYY-MM-DD)', font=('Courier', 10)).grid(row=7, column=0, pady=5)
 
-        #Entries to make changes to existing data
+        # Entries to make changes to existing data
         name = Entry(frame, width=40, font=('Courier', 10), borderwidth=3)
         name.grid(row=2, column=1, pady=5)
         name.insert(END, data[1])
