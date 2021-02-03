@@ -74,7 +74,7 @@ def Enter():
     # Button to save in database
     Button(frame, text='Save', font=('Courier', 10),padx=100,command=save).grid(row=8, column=1, pady=5)
 
-#Function that will save the records entered in Enter() [line 37] to MySQL database 
+# Function that will save the records entered in Enter() [line 37] to MySQL database 
 def save():
     global name, _class, section, phone, dob, doa, db, cursor
     try:

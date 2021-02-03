@@ -1,6 +1,6 @@
 ### 📚 Student Data Management System using Python and MySQL 📁
 
-*Student Data Management System is a project made for educational institutions to store their student’s data. It has various basic operations like:*
+*Student Data Management System is a project made for educational institutions to store their student data. It does various operations like:*
 -	*Accepting and storing a student’s data,*
 -	*Displaying existing records of students,*
 -	*Deleting unnecessary records,*
