@@ -20,7 +20,7 @@ if pwd == "":
     quit()
 
 # Declaring global variables to use in functions
-name, _class, section, phone, dob, doa, delete, edit, search, col, data = '', '', '', '', '', '', '', '', '', [], []
+name, _class, section, phone, dob, doa, delete, edit, edit_id, search, col, data = '', '', '', '', '', '', '', '', '', '', [], []
 
 # Function of main menu
 def menu():
@@ -256,7 +256,7 @@ def edit_menu():
 
 # Function to Edit data of a particular person based on provided Admission number
 def Edit():
-    global frame, db, cursor, edit, data,name, _class, section, phone, dob, doa
+    global frame, db, cursor, edit, data,name, _class, section, phone, dob, doa, edit_id
 
     try:
         # Fetching the existing record from the table "student" 
@@ -315,9 +315,9 @@ def Edit():
 
 # Function to save edit changes in the MySQL database
 def edit_save():
-    global name, _class, section, phone, dob, doa, db, cursor, edit, frame
+    global name, _class, section, phone, dob, doa, db, cursor, edit, frame, edit_id
     data = [name.get(), _class.get(), section.get(), phone.get(), dob.get(), doa.get()]
-    query = f"UPDATE student SET Name = \'{data[0]}\', Class = {data[1]}, Section = \'{data[2]}\', Phone_No = {data[3]}, DOB = \'{data[4]}\', DOA = \'{data[5]}\' WHERE Admission_No = {edit}"
+    query = f"UPDATE student SET Name = \'{data[0]}\', Class = {data[1]}, Section = \'{data[2]}\', Phone_No = {data[3]}, DOB = \'{data[4]}\', DOA = \'{data[5]}\' WHERE Admission_No = {edit_id}"
     cursor.execute(query)
     db.commit()
     messagebox.showinfo("Success","Record updated successfully")
