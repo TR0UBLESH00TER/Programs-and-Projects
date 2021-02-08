@@ -25,24 +25,28 @@ app = Flask(__name__)
 def index():
     year = datetime.now().year
     quote,author=qotd()
-    footer = f'Built with ♥ using <strong>Flask</strong> and <strong>Bulma</strong><br />&copy; {year} TR0UBLESH00TER '
+    footer = f'''<p><img class="icon" style="width:auto; height:auto" src="https://i.ibb.co/Gn0Kx1g/Transparent-bg-footer-light-theme.png"></p>
+    <br />&copy; {year} TR0UBLESH00TER '''
     return render_template('index.html',footer=footer,quote=quote,author=author)
 
 @app.route('/home')
 def home():
     year = datetime.now().year
     quote,author=qotd()
-    footer = f'Built with ♥ using <strong>Flask</strong> and <strong>Bulma</strong><br />&copy; {year} TR0UBLESH00TER '
+    footer = f'''<p><img class="icon" style="width:auto; height:auto" src="https://i.ibb.co/Gn0Kx1g/Transparent-bg-footer-light-theme.png"></p>
+    <br />&copy; {year} TR0UBLESH00TER '''
     return render_template('index.html',footer=footer,quote=quote,author=author)
 
 @app.route('/buttons')
 def buttons():
     year = datetime.now().year
-    footer = f'Built with ♥ using <strong>Flask</strong> and <strong>Bulma</strong><br />&copy; {year} TR0UBLESH00TER '
+    footer = f'''<p><img class="icon" style="width:auto; height:auto" src="https://i.ibb.co/Gn0Kx1g/Transparent-bg-footer-light-theme.png"></p>''
+    <br />&copy; {year} TR0UBLESH00TER '''
     return render_template('buttons.html',footer=footer)
 
 @app.route('/about')
 def about():
     year = datetime.now().year
-    footer = f'Built with ♥ using <strong>Flask</strong> and <strong>Bulma</strong><br />&copy; {year} TR0UBLESH00TER '
+    footer = f'''<p><img class="icon" style="width:auto; height:auto" src="https://i.ibb.co/Gn0Kx1g/Transparent-bg-footer-light-theme.png"></p>
+    <br />&copy; {year} TR0UBLESH00TER '''
     return render_template('about.html',footer=footer)
