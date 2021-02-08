@@ -25,28 +25,22 @@ app = Flask(__name__)
 def index():
     year = datetime.now().year
     quote,author=qotd()
-    footer = f'''<p><img class="icon" style="width:auto; height:auto" src="https://i.ibb.co/Gn0Kx1g/Transparent-bg-footer-light-theme.png"></p>
-    <br />&copy; {year} TR0UBLESH00TER '''
-    return render_template('index.html',footer=footer,quote=quote,author=author)
+    return render_template('index.html',year=year,quote=quote,author=author)
 
 @app.route('/home')
 def home():
     year = datetime.now().year
     quote,author=qotd()
-    footer = f'''<p><img class="icon" style="width:auto; height:auto" src="https://i.ibb.co/Gn0Kx1g/Transparent-bg-footer-light-theme.png"></p>
-    <br />&copy; {year} TR0UBLESH00TER '''
-    return render_template('index.html',footer=footer,quote=quote,author=author)
+    return render_template('index.html',year=year,quote=quote,author=author)
 
 @app.route('/buttons')
 def buttons():
     year = datetime.now().year
-    footer = f'''<p><img class="icon" style="width:auto; height:auto" src="https://i.ibb.co/Gn0Kx1g/Transparent-bg-footer-light-theme.png"></p>''
-    <br />&copy; {year} TR0UBLESH00TER '''
-    return render_template('buttons.html',footer=footer)
+    return render_template('buttons.html',year=year)
 
 @app.route('/about')
 def about():
     year = datetime.now().year
-    footer = f'''<p><img class="icon" style="width:auto; height:auto" src="https://i.ibb.co/Gn0Kx1g/Transparent-bg-footer-light-theme.png"></p>
-    <br />&copy; {year} TR0UBLESH00TER '''
-    return render_template('about.html',footer=footer)
+    return render_template('about.html',year=year)
+
+app.run(host='0.0.0.0', port=8080)

@@ -1,126 +1,53 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Hello World!</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    </head>
+{% block content %}
 
-    <body>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="https://HopefulDopeyVolcano.tr0ublesh00ter.repl.co">
-                    <b> Hello World </b>
-                </a>
+<section class="section">
+    <div class="container">
+        <p> Now some useless buttons?- </p>
+        <div class="buttons">
+            <button class="button is-primary">Primary</button>
+            <button class="button is-link">Link</button>
+        </div>
 
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
+        <div class="buttons">
+            <button class="button is-info">Info</button>
+            <button class="button is-success">Success</button>
+            <button class="button is-warning">Warning</button>
+            <button class="button is-danger">Danger</button>
+        </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" , href="/home">
-                        Home
-                    </a>
+        <div class="buttons">
+            <button class="button is-primary is-outlined">Primary</button>
+            <button class="button is-link is-outlined">Link</button>
+        </div>
 
-                    <a class="navbar-item" href="https://github.com/TR0UBLESH00TER">
-                        Github
-                    </a>
+        <div class="buttons">
+            <button class="button is-info is-outlined">Info</button>
+            <button class="button is-success is-outlined">Success</button>
+            <button class="button is-warning is-outlined">Warning</button>
+            <button class="button is-danger is-outlined">Danger</button>
+        </div>
 
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            More
-                        </a>
+        <div class="buttons">
+            <button class="button is-primary is-inverted">Primary</button>
+            <button class="button is-link is-inverted">Link</button>
+        </div>
 
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item" , href="/about">
-                                About
-                            </a>
-                            <a class="navbar-item" , href="/buttons">
-                                Useless Buttons
-                                <hr class="navbar-divider">
-                                <a class="navbar-item" , href=" https://discord.gg/7XV7DQEDNW">
-                                    Discord Server
-                                </a>
-                        </div>
-                    </div>
-                </div>
+        <div class="buttons">
+            <button class="button is-info is-inverted">Info</button>
+            <button class="button is-success is-inverted">Success</button>
+            <button class="button is-warning is-inverted">Warning</button>
+            <button class="button is-danger is-inverted">Danger</button>
+        </div>
+        <p> If you are phone I guess your navbar is dead?- I'll figure it out later as I am still learning.<br /> So
+            you can use the 2 buttons below for now:</p>
+        <p><br /></p>
+        <div class="buttons">
+            <button class="button is-primary is-outlined is-rounded"><a href="/home">Home<a></button>
+            <button class="button is-link is-outlined is-rounded"><a href="/about">About</a></button>
+        </div>
+    </div>
+</section>
 
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary">
-                                <strong>Sign up (Doesn't work)</strong>
-                            </a>
-                            <a class="button is-light">
-                                Log in (Doesn't work)
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <section class="section">
-            <div class="container">
-                <p> Now some useless buttons?- </p>
-                <div class="buttons">
-                    <button class="button is-primary">Primary</button>
-                    <button class="button is-link">Link</button>
-                </div>
-
-                <div class="buttons">
-                    <button class="button is-info">Info</button>
-                    <button class="button is-success">Success</button>
-                    <button class="button is-warning">Warning</button>
-                    <button class="button is-danger">Danger</button>
-                </div>
-
-                <div class="buttons">
-                    <button class="button is-primary is-outlined">Primary</button>
-                    <button class="button is-link is-outlined">Link</button>
-                </div>
-
-                <div class="buttons">
-                    <button class="button is-info is-outlined">Info</button>
-                    <button class="button is-success is-outlined">Success</button>
-                    <button class="button is-warning is-outlined">Warning</button>
-                    <button class="button is-danger is-outlined">Danger</button>
-                </div>
-
-                <div class="buttons">
-                    <button class="button is-primary is-inverted">Primary</button>
-                    <button class="button is-link is-inverted">Link</button>
-                </div>
-
-                <div class="buttons">
-                    <button class="button is-info is-inverted">Info</button>
-                    <button class="button is-success is-inverted">Success</button>
-                    <button class="button is-warning is-inverted">Warning</button>
-                    <button class="button is-danger is-inverted">Danger</button>
-                </div>
-                <p> If you are phone I guess your navbar is dead?- I'll figure it out later as I am still learning.<br /> So
-                    you can use the 2 buttons below for now:</p>
-                <p><br /></p>
-                <div class="buttons">
-                    <button class="button is-primary is-outlined is-rounded"><a href="/home">Home<a></button>
-                    <button class="button is-link is-outlined is-rounded"><a href="/about">About</a></button>
-                </div>
-            </div>
-
-        </section>
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <p>
-                    {{footer | safe}}
-                </p>
-            </div>
-        </footer>
-    </body>
-
-</html>
+{% endblock %}
